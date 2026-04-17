@@ -116,7 +116,7 @@ function OTPInput({ value, onChange, error }: { value: string; onChange: (v: str
 export default function Signup() {
   const { setUser, platformSettings } = useApp();
   const navigate = useNavigate();
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
 
   const [step, setStep] = useState(1); // 1=form, 2=otp, 3=done
   const [loading, setLoading] = useState(false);

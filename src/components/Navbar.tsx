@@ -121,17 +121,21 @@ export default function Navbar() {
                   {t(lang, 'nav_login')}
                 </button>
                 <button onClick={() => navigate('/demo')}
-                  className="px-4 py-2.5 text-sm font-semibold border border-indigo-400/60 text-indigo-600 dark:text-indigo-400 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all">
+                  className="px-3 py-2.5 text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   {t(lang, 'nav_demo')}
                 </button>
+                <button onClick={() => navigate('/signup')}
+                  className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5">
+                  {t(lang, 'nav_signup')}
+                </button>
                 <a href={waUrl} target="_blank" rel="noopener noreferrer"
-                  className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-green-500/30 hover:-translate-y-0.5">
-                  <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
+                  title="WhatsApp"
+                  className="relative flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all shadow-md shadow-green-500/30 hover:-translate-y-0.5">
+                  <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
                   </span>
                   <MessageCircle className="w-4 h-4" />
-                  {t(lang, 'nav_trial')}
                 </a>
               </>
             )}
@@ -162,8 +166,9 @@ export default function Navbar() {
               ))}
               <div className="pt-3 space-y-2">
                 <button onClick={() => navigate('/login')} className="w-full px-4 py-3 text-sm font-bold text-center border border-gray-200 dark:border-gray-700 rounded-xl text-gray-700 dark:text-gray-200">{t(lang, 'nav_login')}</button>
-                <button onClick={() => navigate('/demo')} className="w-full px-4 py-3 text-sm font-bold text-center border border-indigo-400 text-indigo-600 rounded-xl">{t(lang, 'nav_demo')}</button>
-                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-bold text-center bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl">
+                <button onClick={() => navigate('/demo')} className="w-full px-4 py-3 text-sm font-bold text-center border border-gray-200 dark:border-gray-700 rounded-xl text-gray-700 dark:text-gray-200">{t(lang, 'nav_demo')}</button>
+                <button onClick={() => navigate('/signup')} className="w-full px-4 py-3 text-sm font-bold text-center bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl">{t(lang, 'nav_signup')}</button>
+                <a href={waUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-bold text-center bg-green-500 text-white rounded-xl">
                   <MessageCircle className="w-4 h-4" />
                   {t(lang, 'nav_trial')}
                 </a>

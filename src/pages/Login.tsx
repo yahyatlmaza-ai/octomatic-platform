@@ -7,7 +7,7 @@ import { useApp } from '../context/AppContext';
 export default function Login() {
   const { setUser, theme, setTheme, platformSettings } = useApp();
   const navigate = useNavigate();
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -166,7 +166,7 @@ export default function Dashboard() {
     return ms && mq;
   });
 
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
   const isOnboarding = !profile?.onboarding_complete && stores.length === 0;
 
   // Trial expiry check — block access if trial ended and no active subscription
@@ -1135,7 +1135,7 @@ function SettingsTab({ user, profile, platformSettings, refreshSettings, autoFor
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [brandForm, setBrandForm] = useState({
-    platform_name: platformSettings?.platform_name || 'DeliverPro',
+    platform_name: platformSettings?.platform_name || 'auto Flow',
     platform_tagline: platformSettings?.platform_tagline || '',
     platform_logo_url: platformSettings?.platform_logo_url || '',
     platform_primary_color: platformSettings?.platform_primary_color || '#6366f1',
@@ -1250,7 +1250,7 @@ function SettingsTab({ user, profile, platformSettings, refreshSettings, autoFor
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { label: 'Platform Name', key: 'platform_name', type: 'text', placeholder: 'DeliverPro' },
+                  { label: 'Platform Name', key: 'platform_name', type: 'text', placeholder: 'auto Flow' },
                   { label: 'Tagline', key: 'platform_tagline', type: 'text', placeholder: "Algeria's #1 Logistics Platform" },
                   { label: 'Logo URL', key: 'platform_logo_url', type: 'url', placeholder: 'https://...' },
                   { label: 'Primary Color', key: 'platform_primary_color', type: 'color', placeholder: '' },

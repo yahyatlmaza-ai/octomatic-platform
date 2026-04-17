@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 
 // ── Platform constants ────────────────────────────────────────────────────────
-export const PLATFORM_NAME = 'DeliverPro';
+export const PLATFORM_NAME = 'auto Flow';
 // NOTE: The default OTP_SECRET string is kept as-is so that OTP hashes produced
 // by the previous platform name remain verifiable. Override via env in prod.
 export const OTP_SECRET = process.env.OTP_SECRET || 'autoflow-otp-secret-key-2025-secure';

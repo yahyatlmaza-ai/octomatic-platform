@@ -87,7 +87,7 @@ export default function TrialExpiredWall({ onClose }: { onClose?: () => void }) 
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Your Free Trial Has Ended</h1>
           <p className="text-gray-400 text-lg">
-            Choose a plan to continue using {platformSettings?.platform_name || 'DeliverPro'} and keep your data.
+            Choose a plan to continue using {platformSettings?.platform_name || 'auto Flow'} and keep your data.
           </p>
         </div>
 

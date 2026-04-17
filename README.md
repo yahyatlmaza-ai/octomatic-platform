@@ -1,6 +1,6 @@
-# DeliverPro — Premium Logistics Automation Platform
+# auto Flow — Premium Logistics Automation Platform
 
-**DeliverPro** is an all-in-one order management and shipping automation platform built for Algerian and international e-commerce businesses. It supports multi-carrier shipping, multi-store management, COD workflows, real-time tracking, CRM, analytics, and VIP-tier premium support.
+**auto Flow** is an all-in-one order management and shipping automation platform built for Algerian and international e-commerce businesses. It supports multi-carrier shipping, multi-store management, COD workflows, real-time tracking, CRM, analytics, and VIP-tier premium support.
 
 Tech stack: **React 19 + TypeScript + Vite 7 + Tailwind CSS 4 + Framer Motion + Supabase + Vercel Serverless Functions**.
 
@@ -82,7 +82,7 @@ VITE_GOOGLE_AUTH_PROXY=<optional, OAuth proxy URL>
 2. Go to https://vercel.com and import the repo.
 3. Add the environment variables listed above in **Settings → Environment Variables**.
 4. Click **Deploy**. Vercel will auto-detect Vite and build the static frontend plus deploy the `/api` serverless functions.
-5. Configure your custom domain (e.g. `app.deliverpro.dz`) in **Settings → Domains**.
+5. Configure your custom domain (e.g. `app.autoflow.dz`) in **Settings → Domains**.
 
 ---
 
@@ -110,4 +110,4 @@ Update the number in the `platform_settings` Supabase table (key `support_whatsa
 
 ## License
 
-© 2025 DeliverPro. All rights reserved.
+© 2025 auto Flow. All rights reserved.

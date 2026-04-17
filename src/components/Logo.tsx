@@ -18,7 +18,7 @@ function LogoIcon({ size = 28, className = '' }: { size?: number; className?: st
       width={size}
       height={size}
       className={className}
-      aria-label="DeliverPro logo icon"
+      aria-label="auto Flow logo icon"
     >
       <defs>
         <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -65,7 +65,7 @@ export default function Logo({ size = 'md', variant = 'full', clickable = false,
   const navigate = useNavigate();
   const s = SIZES[size];
   const isDark = forceTheme ? forceTheme === 'dark' : theme === 'dark';
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
   const customLogoUrl = platformSettings?.platform_logo_url;
 
   const handleClick = () => { if (clickable) navigate('/'); };

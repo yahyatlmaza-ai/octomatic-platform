@@ -57,12 +57,12 @@ interface AppContextType {
 }
 
 const defaultSettings: PlatformSettings = {
-  platform_name: 'DeliverPro',
+  platform_name: 'auto Flow',
   platform_tagline: 'Premium Logistics Automation Platform',
   platform_logo_url: '',
   platform_primary_color: '#6366f1',
   support_whatsapp: '213794157508',
-  support_email: 'support@deliverpro.dz',
+  support_email: 'support@autoflow.dz',
   default_currency: 'DZD',
   default_language: 'ar',
   auto_forward_global: 'false',

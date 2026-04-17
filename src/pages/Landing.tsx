@@ -159,7 +159,7 @@ const testimonials = [
   {
     name: 'Karim Boudiaf',
     role: 'E-commerce Owner, Algiers',
-    text: 'DeliverPro transformed my logistics. I went from manually processing 50 orders a day to automating 500+. The Yalidine and ZR Express integrations are flawless.',
+    text: 'auto Flow transformed my logistics. I went from manually processing 50 orders a day to automating 500+. The Yalidine and ZR Express integrations are flawless.',
     rating: 5,
     avatar: 'KB',
   },
@@ -173,7 +173,7 @@ const testimonials = [
   {
     name: 'Ahmed Taleb',
     role: 'Multi-store Merchant, Oran',
-    text: 'Managing 3 stores and 2 warehouses was a nightmare before DeliverPro. Now everything is in one place. The Arabic RTL support is perfect.',
+    text: 'Managing 3 stores and 2 warehouses was a nightmare before auto Flow. Now everything is in one place. The Arabic RTL support is perfect.',
     rating: 5,
     avatar: 'AT',
   },
@@ -201,7 +201,7 @@ const faqs = [
   },
   {
     q: 'Is Arabic RTL supported?',
-    a: 'Absolutely. DeliverPro fully supports Arabic with RTL layout, French, and English without any interface changes.',
+    a: 'Absolutely. auto Flow fully supports Arabic with RTL layout, French, and English without any interface changes.',
   },
   {
     q: 'How is COD managed?',
@@ -222,7 +222,7 @@ export default function Landing() {
   const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
   const whatsappNumber = platformSettings?.support_whatsapp || WHATSAPP_NUMBER;
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
@@ -283,7 +283,7 @@ export default function Landing() {
               {t(lang, 'hero_sub')}
             </motion.p>
 
-            {/* Primary CTA: WhatsApp (replaces Free Trial) + secondary demo button */}
+            {/* Primary CTA: Signup (Create Account) + secondary WhatsApp + tertiary Demo */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -291,25 +291,32 @@ export default function Landing() {
               custom={3}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
             >
+              <button
+                onClick={() => navigate('/signup')}
+                className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 hover:shadow-indigo-500/60 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-indigo-500/40 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Sparkles className="w-5 h-5" />
+                {t(lang, 'hero_cta1')}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+              </button>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-green-500/40 hover:shadow-green-500/60 transition-all duration-300 hover:-translate-y-0.5"
+                className="relative flex items-center gap-3 px-6 py-4 bg-white dark:bg-gray-900 border border-green-400/60 dark:border-green-600/60 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 font-bold text-lg rounded-2xl transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
               >
                 <span className="absolute -top-2 -right-2 flex items-center">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
                   </span>
                 </span>
-                <WhatsAppIcon className="w-6 h-6" />
-                {t(lang, 'hero_cta1')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                <WhatsAppIcon className="w-5 h-5" />
+                {t(lang, 'hero_cta_wa')}
               </a>
               <button
                 onClick={() => navigate('/demo')}
-                className="group flex items-center gap-3 px-8 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-bold text-lg rounded-2xl hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
+                className="group flex items-center gap-3 px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold text-lg transition-all duration-300"
               >
                 <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center">
                   <Play className="w-3 h-3 text-indigo-600 fill-indigo-600" />
@@ -351,7 +358,7 @@ export default function Landing() {
                   <div className="w-3 h-3 rounded-full bg-amber-400" />
                   <div className="w-3 h-3 rounded-full bg-green-400" />
                   <div className="flex-1 mx-4 px-4 py-1.5 bg-white dark:bg-gray-900 rounded-lg text-xs text-gray-400 border border-gray-200 dark:border-gray-700">
-                    app.deliverpro.dz/dashboard
+                    app.autoflow.dz/dashboard
                   </div>
                 </div>
                 {/* Dashboard content */}
@@ -661,21 +668,36 @@ export default function Landing() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full py-3 rounded-2xl font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
-                      isVip
-                        ? 'bg-gray-900 text-amber-300 hover:bg-gray-800 border border-amber-300/40'
-                        : isPopular
-                          ? 'bg-white text-indigo-700 hover:bg-indigo-50'
-                          : 'bg-green-500 text-white hover:bg-green-600'
-                    }`}
-                  >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    {t(lang, 'pricing_trial')}
-                  </a>
+                  <div className="flex flex-col gap-2">
+                    <button
+                      onClick={() => navigate('/signup')}
+                      className={`w-full py-3 rounded-2xl font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
+                        isVip
+                          ? 'bg-gray-900 text-amber-300 hover:bg-gray-800 border border-amber-300/40'
+                          : isPopular
+                            ? 'bg-white text-indigo-700 hover:bg-indigo-50'
+                            : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                      }`}
+                    >
+                      <Sparkles className="w-4 h-4" />
+                      {t(lang, 'pricing_trial')}
+                    </button>
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-2.5 rounded-2xl font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 ${
+                        isVip
+                          ? 'bg-white/15 text-white hover:bg-white/25 border border-white/30'
+                          : isPopular
+                            ? 'bg-indigo-700/40 text-white hover:bg-indigo-700/60 border border-white/30'
+                            : 'bg-green-50 text-green-700 hover:bg-green-100 border border-green-300 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800'
+                      }`}
+                    >
+                      <WhatsAppIcon className="w-3.5 h-3.5" />
+                      {t(lang, 'pricing_wa')}
+                    </a>
+                  </div>
                 </motion.div>
               );
             })}
@@ -760,6 +782,13 @@ export default function Landing() {
               <h2 className="text-3xl sm:text-5xl font-black text-white mb-6">{t(lang, 'cta_banner_title')}</h2>
               <p className="text-indigo-200 text-lg mb-8">{t(lang, 'cta_banner_sub')}</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button
+                  onClick={() => navigate('/signup')}
+                  className="flex items-center gap-3 px-8 py-4 bg-white hover:bg-gray-50 text-indigo-700 font-bold rounded-2xl transition-colors shadow-xl"
+                >
+                  <Sparkles className="w-5 h-5" />
+                  {t(lang, 'hero_cta1')}
+                </button>
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -769,13 +798,6 @@ export default function Landing() {
                   <WhatsAppIcon className="w-5 h-5" />
                   {t(lang, 'cta_banner_btn')}
                 </a>
-                <button
-                  onClick={() => navigate('/demo')}
-                  className="flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/10 transition-colors"
-                >
-                  <Play className="w-5 h-5" />
-                  {t(lang, 'hero_cta2')}
-                </button>
               </div>
               <p className="text-indigo-200 text-xs mt-6 opacity-80 tracking-wider">
                 {platformName} · +213 794 157 508

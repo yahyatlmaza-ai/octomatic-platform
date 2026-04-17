@@ -116,7 +116,7 @@ const STATUS_META: Record<string, { bg: string; color: string; dot: string }> = 
 // ── Demo intro screen ─────────────────────────────────────────────────────────
 function DemoIntro({ onStart, onSignup }: { onStart: () => void; onSignup: () => void }) {
   const { platformSettings } = useApp();
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
 
   return (
     <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4 py-12">
@@ -216,7 +216,7 @@ function DemoDashboard({ onSignup }: { onSignup: () => void }) {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [blockedAction, setBlockedAction] = useState<string | null>(null);
   const { theme, setTheme, platformSettings } = useApp();
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
 
   const block = (action: string) => setBlockedAction(action);
 

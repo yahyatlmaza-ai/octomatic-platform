@@ -22,7 +22,7 @@ const PURPOSE_LABELS: Record<OTPPurpose, { title: string; subtitle: string; icon
 
 export default function OTPInput({ email, phone, purpose, onVerified, onBack, autoSend = true }: OTPInputProps) {
   const { platformSettings } = useApp();
-  const platformName = platformSettings?.platform_name || 'DeliverPro';
+  const platformName = platformSettings?.platform_name || 'auto Flow';
 
   const [digits, setDigits] = useState(['', '', '', '', '', '']);
   const [sessionId, setSessionId] = useState('');
